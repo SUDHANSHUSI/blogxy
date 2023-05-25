@@ -1,0 +1,25 @@
+<section class="blog-detail mtb-40">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="blog-left" *ngFor="let article of articles">
+          <h1>{{ article.title }}</h1>
+          <div class="posted-on">
+            <p>by <span>{{ article.author }}</span> on <span>{{ article.date }}</span></p>
+          </div>
+          <div class="detail-img">
+            <img [src]="article.imageSrc" alt="blog-image">
+          </div>
+          <div class="blog-desc">
+            <p>{{ article.content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <app-featured-articles></app-featured-articles>
+        <app-categories></app-categories>
+      </div>
+    </div>
+  </div>
+</section>
+
