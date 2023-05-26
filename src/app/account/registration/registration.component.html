@@ -10,7 +10,7 @@
           <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
             <div class="form-group form-row">
               <label class="col-md-3"
-                >Name : <span class="required">*</span></label
+                >Name <span class="required">*</span></label
               >
               <div class="col-md-9">
                 <input
@@ -18,7 +18,7 @@
                   formcontrolname="Name"
                   class="form-control"
                   placeholder="Name"
-                  required=""
+                  required
                 />
                 <span
                   *ngIf="!regForm.get('Name')?.valid &amp;&amp; regForm.get('Name')?.touched"
@@ -37,7 +37,7 @@
                   formcontrolname="Email"
                   class="form-control"
                   placeholder="Email Id"
-                  required=""
+                  required
                 />
                 <span
                   *ngIf="!regForm.get('Email')?.valid &amp;&amp; regForm.get('Email')?.touched"
@@ -55,7 +55,7 @@
                   formcontrolname="Password"
                   class="form-control"
                   placeholder="Password"
-                  required=""
+                  required
                 />
                 <span
                   *ngIf="!regForm.get('Password')?.valid &amp;&amp; regForm.get('Password')?.touched"
