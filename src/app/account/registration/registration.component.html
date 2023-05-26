@@ -4,10 +4,10 @@
       <div class="col-md-6">
         <div class="login-box">
           <h1>User Registration</h1>
-          <div class="alert alert-success" *ngif="datasaved">
+          <div class="alert alert-success" *ngIf="datasaved">
             {{ message }}
           </div>
-          <form (ngsubmit)="onSubmit()" [formGroup]="regForm" novalidate>
+          <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
             <div class="form-group form-row">
               <label class="col-md-3"
                 >Name : <span class="required">*</span></label
@@ -21,7 +21,7 @@
                   required=""
                 />
                 <span
-                  *ngif="!regForm.get('Name').valid &amp;&amp; regForm.get('Name').touched"
+                  *ngIf="!regForm.get('Name')?.valid &amp;&amp; regForm.get('Name')?.touched"
                   >Please enter Your Name !!!</span
                 >
               </div>
@@ -40,14 +40,14 @@
                   required=""
                 />
                 <span
-                  *ngif="!regForm.get('Email').valid &amp;&amp; regForm.get('Email').touched"
+                  *ngIf="!regForm.get('Email')?.valid &amp;&amp; regForm.get('Email')?.touched"
                   >Please enter Email !!!</span
                 >
               </div>
             </div>
             <div class="form-group form-row">
               <label class="col-md-3"
-                >Password <span class="required">*</span></label
+                >Password<span class="required">*</span></label
               >
               <div class="col-md-9">
                 <input
@@ -58,30 +58,12 @@
                   required=""
                 />
                 <span
-                  *ngif="!regForm.get('Password').valid &amp;&amp; regForm.get('Password').touched"
+                  *ngIf="!regForm.get('Password')?.valid &amp;&amp; regForm.get('Password')?.touched"
                   >Please enter Password !!!</span
                 >
               </div>
-            </div>
-            <div class="form-group form-row">
-              <label class="col-md-3"
-                >PasswordConfirm <span class="required">*</span></label
-              >
-              <div class="col-md-9">
-                <input
-                  type="password"
-                  formcontrolname="PasswordConfirm"
-                  class="form-control"
-                  placeholder="PasswordConfirm"
-                  required=""
-                />
-                <span
-                  *ngif="!regForm.get('PasswordConfirm').valid &amp;&amp; regForm.get('PasswordConfirm').touched"
-                  >Please enter confirm Password !!!</span
-                >
-              </div>
-            </div>
-
+            </div>         
+              <br>
             <div class="form-group">
               <button
                 type="submit"

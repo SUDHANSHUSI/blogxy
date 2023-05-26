@@ -21,7 +21,8 @@ export class RegistrationComponent implements OnInit {
     this.regForm = this.formbuilder.group({
        Name: ['', [Validators.required]],
       Email: ['', [Validators.required]],
-      Password: ['', [Validators.required]]
+      Password: ['', [Validators.required]],
+      PasswordConfirm:['',[Validators.required]]
     })
   }
 
