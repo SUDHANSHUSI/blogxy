@@ -13,7 +13,7 @@ app.use(express.json());
 dbConnect();
 
 
-app.use("/users", userRoutes);
+app.use("/api", userRoutes);
 
 app.all("*", (req, res, next) => {
   return next(

@@ -27,6 +27,9 @@ const createSendToken = (user, statusCode, res) => {
 
 const signup = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
+  // const name =req.body.Name;
+  // const email = req.body.Email;
+  // const password = req.body.Password
 
   const newUser = await User.create({
     name,
@@ -68,7 +71,6 @@ const login = catchAsync(async (req, res, next) => {
 });
 
 const protect = catchAsync(async (req, res, next) => {
-  
   //  1)************ Getting token and check if it's there*************
   let token;
   if (
