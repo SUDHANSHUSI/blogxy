@@ -4,7 +4,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 const routes: Routes = [
-  { path: 'article', component: ArticleListComponent },
+  { path: 'articles', component: ArticleListComponent },
   { path: 'article/:id', component: ArticleDetailsComponent },
 ];
 
